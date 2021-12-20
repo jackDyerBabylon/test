@@ -1,3 +1,4 @@
 {
-  "testVariable": "hello world"
+  "testVariable": "hello world",
+  "hello": "test"
 }
