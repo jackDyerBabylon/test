@@ -1,4 +1,66 @@
 {
-  "testVariable": "hello world",
-  "hello": "test"
+  "process": {
+    "consecutiveExceptionTerminate": 5,
+    "consecutiveExceptionRestart": 3,
+    "queueRetries": 3,
+    "testingFolderPath": "C:\\Users\\>USERNAME<\\Box\\Blue Prism Robots\\2. RPA - Canada\\0. RPA Projects\\BPCA 02 - Labs\\5. Send eFax\\Testing\\"
+  },
+  "workflow": {
+    "workflowDefinition": "ca testDefinition",
+    "taskLockTimer": 60000,
+    "topicName": "test_topic",
+    "tenantId": "GBR",
+    "defaultErrorCode": "default_error",
+    "specificErrorCode": "specific_error",
+    "retryLockTimer": 60000,
+    "deferLockTimer": 240000,
+    "priorTasks": [
+      {
+        "topicName": "firstTopic",
+        "sheetName": "ICL",
+        "manual": false,
+        "sendMessage": false,
+        "moveProcess": false
+      },
+      {
+        "topicName": "secondTopic",
+        "sheetName": "EPLL",
+        "manual": false,
+        "sendMessage": false,
+        "moveProcess": false
+      }
+    ]
+  },
+  "validationWorkflowTask": [
+    {
+      "workflowVariable": "memberId",
+      "bluePrismVariable": "Babylon ID",
+      "required": true,
+      "type": "number"
+    },
+    {
+      "workflowVariable": "testVar",
+      "bluePrismVariable": "Test Var",
+      "required": false,
+      "type": "text"
+    }
+  ],
+  "validationAdminPortal": [
+    {
+      "adminPortalVariable": "firstName",
+      "bluePrismVariable": "First Name",
+      "type": "text"
+    }
+  ],
+  "credential": {
+    "email": "EMAIL_Blueprism0101",
+    "service": "BabylonAuth0_DEV_Credentials"
+  },
+  "api": {
+    "babylonBaseUrl": "-uk.dev.babylontech.co.uk/",
+    "workflowBaseUrl": "-uk.dev.babylontech.co.uk/",
+    "retryLimit": 3,
+    "retryWaitTime": 15,
+    "pollTime": 15
+  }
 }
